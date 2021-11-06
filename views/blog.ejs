@@ -1,0 +1,20 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <% for (let post of data) { %>
+        <div class="col-lg-8">
+            <!-- Featured blog post-->
+            <div class="card mb-4">
+                <a href="<%= post.url %>"><img class="card-img-top" src="<%= post.cover_image %>"
+                        alt="<%= post.title %>" /></a>
+                <div class="card-body">
+                    <div class="small text-muted"><%= post.readable_publish_date %></div>
+                    <h2 class="card-title"><%= post.title %></h2>
+                    <p class="card-text"><%= post.description %></p>
+                    <a class="btn btn-dark" href="<%= post.url %>">Read more →</a>
+                </div>
+            </div>
+        </div>
+        <% } %>
+    </div>

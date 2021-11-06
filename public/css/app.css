@@ -12,6 +12,7 @@ body {
 main {
     /* background: #e3e8ea; */
     flex-grow: 1;
+    background: linear-gradient(to right bottom, #e3e8ea 10%, #fff 90%);
 }
 
 .footer {

@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const ejsMate = require('ejs-mate');
+const axios = require('axios');
 
 const app = express();
 
@@ -26,7 +27,21 @@ app.get('/about', (req, res) => {
 
 app.get('/contact', (req, res) => {
 	res.render('contact');
-})
+});
+
+app.get('/blog', async (req, res) => {
+	try {
+	const { data } = await axios.get('https://dev.to/api/articles?username=bagasn');
+	res.render('blog', {data});
+	} catch (e) {
+	console.error(e);
+	res.redirect('/');
+	}
+});
+
+app.all('*', (req, res) => {
+	res.send("404");
+});
 
 app.listen(8080, () => {
 	console.log('Serving on port 8080')

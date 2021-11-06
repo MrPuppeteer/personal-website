@@ -35,7 +35,7 @@ app.get('/blog', async (req, res, next) => {
 	const { data } = await axios.get('https://dev.to/api/articles?username=bagasn');
 	res.render('blog', {data});
 	} catch (e) {
-	console.error(e);
+	// console.error(e);
 	next(new ExpressError('Internal Server Error', 500));
 	}
 });

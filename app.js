@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const ejsMate = require('ejs-mate');
 const axios = require('axios');
+const ExpressError = require('./utils/ExpressError');
 
 const app = express();
 
@@ -29,18 +30,24 @@ app.get('/contact', (req, res) => {
 	res.render('contact');
 });
 
-app.get('/blog', async (req, res) => {
+app.get('/blog', async (req, res, next) => {
 	try {
 	const { data } = await axios.get('https://dev.to/api/articles?username=bagasn');
 	res.render('blog', {data});
 	} catch (e) {
 	console.error(e);
-	res.redirect('/');
+	next(new ExpressError('Internal Server Error', 500));
 	}
 });
 
-app.all('*', (req, res) => {
-	res.send("404");
+app.all('*', (req, res, next) => {
+	next(new ExpressError('Page not Found', 404));
+});
+
+app.use((err, req, res, next) => {
+	const {statusCode = 500} = err;
+	if (!err.message) err.message = 'Something went wrong';
+	res.status(statusCode).render('error', {err});
 });
 
 app.listen(8080, () => {

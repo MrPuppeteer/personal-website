@@ -1,0 +1,30 @@
+.bi {
+    font-size: 3rem;
+}
+
+.bi-github {
+    font-size: 9rem;
+    color: #171515;
+}
+
+.bi {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.bi:hover {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.bi-facebook:hover {
+    color: #4267b2;
+}
+
+.bi-twitter:hover {
+    color: #1da1f2;
+}
+
+.bi-discord:hover {
+    color: #5865f2;
+}

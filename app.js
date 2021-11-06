@@ -13,6 +13,7 @@ app.engine('ejs', ejsMate);
 app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use('/public/css', express.static(path.join(__dirname, '/node_modules/bootstrap/dist/css')));
 app.use('/public/js', express.static(path.join(__dirname, '/node_modules/bootstrap/dist/js')));
+app.use('/public/css', express.static(path.join(__dirname, '/node_modules/bootstrap-icons/font')));
 
 
 app.get('/', (req, res) => {
@@ -21,6 +22,10 @@ app.get('/', (req, res) => {
 
 app.get('/about', (req, res) => {
 	res.render('about');
+});
+
+app.get('/contact', (req, res) => {
+	res.render('contact');
 })
 
 app.listen(8080, () => {

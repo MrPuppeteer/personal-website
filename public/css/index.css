@@ -1,0 +1,9 @@
+.code {
+    font-size: 9rem;
+}
+
+@media (min-width: 992px) {
+    .hi {
+        padding: 0 12rem;
+    }
+}

@@ -5,23 +5,24 @@ body {
     flex-direction: column;
 }
 
+.header {
+    border-bottom: 1px solid #bccad0;
+}
+
+main {
+    /* background: #e3e8ea; */
+    flex-grow: 1;
+}
+
+.footer {
+    border-top: 1px solid #bccad0;
+}
+
 .itsme {
     font-size: 2.5rem;
     font-weight: 300;
 }
 
-.header {
-    border-bottom: 1px solid #bccad0;
-}
-
 a:hover {
     text-decoration: underline;
-}
-
-.code {
-    font-size: 8rem;
-}
-
-.footer {
-    border-top: 1px solid #bccad0;
 }

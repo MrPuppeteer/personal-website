@@ -9,14 +9,23 @@ body {
     border-bottom: 1px solid #bccad0;
 }
 
-.navbar-light .navbar-brand {
+/* a:hover {
+    text-decoration: underline;
+} */
+
+.navbar-light .navbar-brand, .navbar-light .nav-link {
     text-decoration: none;
-    color: rgb(0, 0, 0, 0.6);
+    color: #707a7e;
 }
 
-.navbar-light .navbar-brand:hover {
+.navbar-light .navbar-brand:hover, .navbar-light .nav-link:hover {
     text-decoration: none;
     color: #000;
+}
+
+.navbar-brand {
+    /* font-size: 2.5rem; */
+    font-weight: 300;
 }
 
 main {
@@ -28,13 +37,4 @@ main {
 
 .footer {
     border-top: 1px solid #bccad0;
-}
-
-.itsme {
-    font-size: 2.5rem;
-    font-weight: 300;
-}
-
-a:hover {
-    text-decoration: underline;
 }

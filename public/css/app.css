@@ -1,5 +1,5 @@
 body {
-    font-family: monospace;
+    font-family: 'Fira Sans', sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -9,9 +9,20 @@ body {
     border-bottom: 1px solid #bccad0;
 }
 
+.navbar-light .navbar-brand {
+    text-decoration: none;
+    color: rgb(0, 0, 0, 0.6);
+}
+
+.navbar-light .navbar-brand:hover {
+    text-decoration: none;
+    color: #000;
+}
+
 main {
-    /* background: #e3e8ea; */
     flex-grow: 1;
+    display: flex;
+    background: #e3e8ea;
     background: linear-gradient(to right bottom, #e3e8ea 10%, #fff 90%);
 }
 
